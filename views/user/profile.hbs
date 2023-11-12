@@ -1,0 +1,20 @@
+<section>
+
+    <div class="row">
+        <div class="card " style="background: none;margin-left:30px;border:none">
+            <img class="rounded-circle " src="/user-images/{{profile._id}}.jpg" alt="Card image cap" style="width: 600px;border-radius: 50% ;  height: 600px; margin: 10px auto;">
+        </div>
+        <div class="card-body" style="background-color: linear-gradient(to right,#ffc107, #007bff);">
+            <h3 class="card-title mt-3">{{profile.Name}}</h3>
+            <p class="card-text">{{profile.Email}}</p>
+            <p class="card-text">{{profile.Contact}}</p>
+            <a href="/edit-profile/{{profile._id}}">
+                <button type="button" class="btn btn-warning">Edit Profile</button>
+            </a>
+            <a href="/updateuserpass/{{profile._id}}">
+                <button type="button" class="btn btn-warning">Update password</button>
+            </a>
+        </div>
+    </div>
+
+</section>

@@ -1,0 +1,51 @@
+<section>
+    <div class="container">
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-link">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a href="/superadmin/addadmin" class="btn btn-warning ml-2 mt-2">Add Admin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/superadmin/viewusers" class="btn btn-warning ml-2 mt-2">View User</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/superadmin/updatesuperinfo/{{superAdmin._id}}" class="btn btn-warning ml-2 mt-2">Update info</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        
+        <table class="table mt-5">
+            <thead>
+                <tr>
+                <th scope="col">No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Unique Key</th>
+                <th scope="col">contact No.</th>
+                <th scope="col">Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each admin}}
+                <tr>
+                <th scope="row">{{@index}}</th>
+                <td>{{this.Name}}</td>
+                <td>{{this.Email}}</td>
+                <td>{{this.Ukey}}</td>
+                <td>{{this.Contact}}</td>
+                <td><img style="width: 50px;" src="/admin-images/{{this._id}}.jpg" alt=""></td>
+                <td><a href="/superadmin/editadmin/{{this._id}}" class="btn btn-primary">Edit</a></td>
+                <td><a href="/superadmin/deleteadmin/{{this._id}}" class="btn btn-danger" onclick="return confirm('Do you want to delete {{this.Name}} ?')">Delete</a></td>
+                <td><a href="/superadmin/updateadminpass/{{this._id}}" class="btn btn-primary">Update Password</a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</section>

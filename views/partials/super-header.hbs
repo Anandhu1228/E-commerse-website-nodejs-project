@@ -1,0 +1,32 @@
+{{#if showSeader}}
+    <header>
+
+                <nav class="navbar navbar-light bg-light ">
+                    
+                    <a class="navbar-brand" href="/superadmin/viewadmin">
+                        <button type="button" class="btn btn-warning">Home</button>
+                    </a>
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="Account" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{#if suber}}
+                            {{suber.Name}}
+                            {{else}}
+                                Account
+                            {{/if}}
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="Account">
+
+                            {{#if suber}}
+                                <a class="dropdown-item" href="/superadmin/superlogout">logout</a>
+                            {{else}}
+                                <a class="dropdown-item" href="/superadmin">login</a>
+                            {{/if}}
+                
+                        </div>
+                    </div>
+                </nav>
+        
+                
+
+    </header>
+{{/if}}

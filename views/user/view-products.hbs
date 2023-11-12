@@ -1,0 +1,66 @@
+    <section>
+        <div class="container mt-5">
+            <div class="row">
+
+                <div class="col-md-12 mb-4">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search products...">
+                </div>
+                {{#each products}}
+
+                    <div class="col-md-3 p-3">
+                        <div class="card" style="width: 15rem; height:25rem">
+                            <img class="card-img-top" src="./product-images/{{this._id}}.jpg"
+                             alt="card image cp"
+                             style="height:12rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{this.Name}}</h5>
+                                <p class="card-text">Rs.{{this.Price}}</p>
+                                <p class="card-text">{{this.Description}}</p>
+                                <button onclick="addToCart('{{this._id}}')" class="btn btn-primary">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                {{/each}}
+                
+            </div>
+        </div>
+    </section>
+<script>
+    function filterProducts() {
+        let input, filter, cards, card, title, i;
+        input = document.getElementById("searchInput");
+        filter = input.value.toUpperCase();
+        cards = document.getElementsByClassName("col-md-3");
+
+        for (i = 0; i < cards.length; i++) {
+            card = cards[i];
+            title = card.querySelector(".card-title");
+            if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+        }
+    }
+
+    $(document).ready(function () {
+        $("#searchInput").on("input", function () {
+            filterProducts();
+        });
+    });
+
+    function addToCart(prodId){
+    $.ajax({
+        url:"/add-to-cart/"+prodId,
+        method:'get',
+        success:(response)=>{
+            if(response.status){
+                let count = $('#cart-count').html()
+                count = parseInt(count)+1
+                $("#cart-count").html(count)
+            }
+        }
+    })
+}
+</script>

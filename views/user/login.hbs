@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-6 m-auto">
+        <div class="container mt-5 pl-5">
+            <h2 class = "text-center">Login</h2>
+            <form action="/login" method="POST">
+            {{#if LoginERROR}}
+                <p class="error" style="color: red;">{{LoginERROR}}</p>
+            {{/if}}
+                <div class="form-group">
+                    <label>Email address</label>
+                    <input type="email" class="form-control" name="Email" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="Password" placeholder="Password">
+                </div>
+                <div>
+                    <a href="/signup" style="color: white;">Create new accont</a>
+                    <button type="submit" class="btn btn-primary float-right">Login</button>
+                </div>
+                <div class="form-group">
+                    <a href="/recoverpass"><p style="color: white;margin-top: 50px;">Click here if you want to recover your account using older password</p></a>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</div>

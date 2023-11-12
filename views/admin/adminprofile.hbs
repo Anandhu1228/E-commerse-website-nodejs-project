@@ -1,0 +1,16 @@
+<section>
+    <div class="row">
+        <div class="card " style="background-color: rgb(155, 148, 148);width:700px">
+            <img class="rounded-circle " src="/admin-images/{{profile._id}}.jpg" alt="Card image cap" style="width: 600px;border-radius: 50% ;  height: 600px; margin: 10px auto;">
+        </div>
+        <div class="card-body" style="background-color: rgb(155, 148, 148);">
+            <h3 class="card-title mt-3">{{profile.Name}}</h3>
+            <p class="card-text">{{profile.Email}}</p>
+            <p class="card-text">{{profile.Contact}}</p>
+            <p class="card-text">{{profile.Ukey}}</p>
+            <a href="/admin/editadminprofile/{{profile._id}}">
+                <button type="button" class="btn btn-warning">Edit Profile</button>
+            </a>
+        </div>
+    </div>
+</section>
