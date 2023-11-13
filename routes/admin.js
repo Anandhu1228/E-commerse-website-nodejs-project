@@ -75,7 +75,7 @@ router.post('/add-product', (req, res) => {
       console.log(err);
     });
 });
-router.get('/view-product',verifyLogin,(req,res)=>{
+router.get('/view-product',(req,res)=>{
   let adminId = req.session.admin._id;
   let aber = req.session.admin
   console.log(adminId)
