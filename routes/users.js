@@ -130,8 +130,9 @@ router.get('/edit-profile/:id',verifyLogin,async(req,res)=>{
 router.post('/edit-profile/:id',(req,res)=>{
   userHelpers.updateProfile(req.params.id,req.body).then(()=>{
     res.redirect('/profile')
-    let image=req.files.Image
-    if(req.files.Image){
+
+    if(req.files && req.files.Image){
+      let image=req.files.Image
       image.mv('./public/user-images/'+req.params.id+'.jpg')
     }
   })
