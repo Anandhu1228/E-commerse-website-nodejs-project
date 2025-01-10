@@ -1,7 +1,7 @@
 const { MongoClient } = require("mongodb");
 
 let dbConnection;
-const mongoURI = "mongodb+srv://anandhumohan2018:GOSDESATcloud@shopping.bmofpky.mongodb.net/?retryWrites=true&w=majority";
+const mongoURI = "moxxxdb+srv://xxxxxxxx18:Gxxxxxxxxxxping.bmofpky.moxxxxb.net/?rxxxxxes=true&w=maxxxxty";
 
 module.exports = {
   connectToDb: (cb) => {
